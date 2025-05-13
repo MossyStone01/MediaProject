@@ -7,8 +7,8 @@ public class GameMgr : MonoBehaviour
 {
     public static GameMgr Instance { get; private set; }
     
-    private int life = 5;
-    private int score = 0;
+    [HideInInspector] public int life = 5;
+    [HideInInspector] public int score = 0;
     private int index;
     
     private AudioSource audioSource;
@@ -26,7 +26,7 @@ public class GameMgr : MonoBehaviour
             return;
         }
 
-        index = Random.Range(0, sceneNames.Length);
+        index = Random.Range(1, sceneNames.Length);
         string sceneToLoad = sceneNames[index];
         Debug.Log("로딩할 랜덤 씬: " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
@@ -92,10 +92,10 @@ public class GameMgr : MonoBehaviour
 
     private void ChangeScene()
     {
-        int temp = Random.Range(0, sceneNames.Length);
+        int temp = Random.Range(1, sceneNames.Length);
         while (temp == index)
         {
-            temp = Random.Range(0, sceneNames.Length);
+            temp = Random.Range(1, sceneNames.Length);
         }
         
         index = temp;
