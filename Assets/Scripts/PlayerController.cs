@@ -36,8 +36,7 @@ public class SimpleJumpController : MonoBehaviour
     {
         if(other.CompareTag("Obstacle"))
         {
-            // TODO : DDOL 상태인 게임 매니저에게 미니 게임에 실패했음을 알려주어야 함.
-            Debug.Log("Fail!");
+            GameMgr.Instance.EndStage(false);
         }
     }
 }

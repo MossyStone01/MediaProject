@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/StartScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/EndScene.unity
+    guid: 0b4bc7ac31cc1974d8a8ccf4692ffe0f
+  - enabled: 1
+    path: Assets/Scenes/Mario.unity
+    guid: 1932f077a49954a4c90d9257c599b6fb
+  - enabled: 1
+    path: Assets/Scenes/Jump.unity
+    guid: 48c938b24c6684e2895244774f4eae00
+  - enabled: 1
+    path: Assets/Scenes/Push.unity
+    guid: eb7c5421a246f438fbf03a8d59f11e5f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

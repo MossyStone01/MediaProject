@@ -680,13 +680,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1671451531}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 1671451532}
+        m_TargetAssemblyTypeName: GameMgr, Assembly-CSharp
+        m_MethodName: StartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1063,7 +1063,7 @@ GameObject:
   - component: {fileID: 1671451532}
   - component: {fileID: 1671451534}
   m_Layer: 0
-  m_Name: StartSceneManager
+  m_Name: GameMgr
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1081,6 +1081,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2ef23efa5eca4d568c8ca0b07bc4342, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneNames:
+  - EndScene
+  - Push
+  - Jump
+  - Mario
+  - Shoot
+  timerDuration: 5
 --- !u!4 &1671451533
 Transform:
   m_ObjectHideFlags: 0
@@ -1193,6 +1200,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1862256081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1862256082}
+  m_Layer: 0
+  m_Name: --------------------------------------------------------
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1862256082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1862256081}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -155.31523, y: -33.393818, z: -0.9160069}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1891597673
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,5 +1487,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1381866154}
   - {fileID: 1257889213}
-  - {fileID: 1671451533}
   - {fileID: 2140861760}
+  - {fileID: 1862256082}
+  - {fileID: 1671451533}
