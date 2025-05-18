@@ -8,16 +8,25 @@ public class GameMgr : MonoBehaviour
     public static GameMgr Instance { get; private set; }
     
     [HideInInspector] public int life = 5;
+    [HideInInspector] public string playerName;
     [HideInInspector] public int score = 0;
     private int index;
+    private string rankingSceneName = "RankingScene";
     
     private AudioSource audioSource;
     public string[] sceneNames;
     
     public float timerDuration = 5f;
-    private float timer;
+    [HideInInspector] public float timer;
     private bool gameStart = false;
 
+    private float times = 1.0f; // 스테이지가 지날 수록 점점 빨라지는 구조로 만들기 위한 factor
+
+    public void EnterEnrollScene()
+    {
+        SceneManager.LoadScene("EnrollScene");
+    }
+    
     public void StartGame()
     {
         if (sceneNames.Length == 0)
@@ -69,6 +78,7 @@ public class GameMgr : MonoBehaviour
             // Stage Clear 시
 
             score += 1;
+            Debug.Log("Clear!");
         }
         else
         {
@@ -76,8 +86,23 @@ public class GameMgr : MonoBehaviour
                 // Stage Clear Fail
 
                 life -= 1;
+                Debug.Log("Fail!");
                 if (life <= 0)
                 {
+                    string playerName = PlayerPrefs.GetString("PlayerName", "Unknown");
+                    
+                    string key = "Ranking_" + System.DateTime.Now.Ticks;
+                    string value = playerName + ":" + score;
+                    PlayerPrefs.SetString(key, value);
+
+                    // 랭킹 키 목록 갱신
+                    string keys = PlayerPrefs.GetString("Ranking_Keys", "");
+                    keys += key + ";";
+                    PlayerPrefs.SetString("Ranking_Keys", keys);
+
+                    Debug.Log("랭킹 등록 완료: " + value);
+
+                    
                     string sceneToLoad = sceneNames[0]; // End Game Scene 인덱스 0으로 유지
                     SceneManager.LoadScene(sceneToLoad);
                     return;
@@ -102,5 +127,20 @@ public class GameMgr : MonoBehaviour
         string sceneToLoad = sceneNames[index];
         Debug.Log("로딩할 랜덤 씬: " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
+    }
+    
+    public void OnSubmitName(string submittedName)
+    {
+        playerName = submittedName;
+        PlayerPrefs.SetString("PlayerName", submittedName);
+        Debug.Log("이름 저장 완료: " + submittedName);
+
+        // 이름 저장 후 게임 시작으로 넘어가기
+        // SceneManager.LoadScene("GameScene"); 등
+    }
+
+    public void EnterRankingScene()
+    {
+        SceneManager.LoadScene(rankingSceneName);
     }
 }
