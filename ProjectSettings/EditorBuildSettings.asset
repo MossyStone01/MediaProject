@@ -21,23 +21,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Avoid.unity
     guid: dfda6daf07bea7744a0f3bdb79ab133c
   - enabled: 1
-    path: Assets/Scenes/Stages/Avoid 2.unity
-    guid: 3c6833d12c6184c4c95e5d039fc578ca
-  - enabled: 1
     path: Assets/Scenes/Stages/Block.unity
     guid: 4cf728dd529e1db45a7c4b67bc2ef8a8
   - enabled: 1
-    path: Assets/Scenes/Stages/Block 2.unity
+    path: Assets/Scenes/Stages/ColourMatching.unity
     guid: ce15568249338424a98f315281f8697e
   - enabled: 1
-    path: Assets/Scenes/Stages/Click.unity
+    path: Assets/Scenes/Stages/MathMatical.unity
     guid: fb737aa4a3d0ed84792c622dbeb20f4f
   - enabled: 1
     path: Assets/Scenes/Stages/Jump.unity
     guid: 48c938b24c6684e2895244774f4eae00
-  - enabled: 1
-    path: Assets/Scenes/Stages/JumpToLimit.unity
-    guid: 7dc69343908a4774787b096cececa977
   - enabled: 1
     path: Assets/Scenes/Stages/Mario.unity
     guid: 1932f077a49954a4c90d9257c599b6fb
@@ -45,13 +39,13 @@ EditorBuildSettings:
     path: Assets/Scenes/Stages/Push.unity
     guid: eb7c5421a246f438fbf03a8d59f11e5f
   - enabled: 1
-    path: Assets/Scenes/Stages/Scroll.unity
-    guid: f47c017315f32384cbf1f3b9ef365648
+    path: Assets/Scenes/Stages/TypeTheWord.unity
+    guid: db76edea082ca3e44b3c3e76e4590209
   - enabled: 1
     path: Assets/Scenes/Stages/Shoot.unity
     guid: 126ded03dc8b649e4890c9d6d6b53b97
   - enabled: 1
-    path: Assets/Scenes/Stages/Tetris.unity
-    guid: 677929620c69c8c43a3cad5772de4b01
+    path: Assets/Scenes/Stages/PressSpace.unity
+    guid: 043cb62158e685c4caa3245915e9bb53
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

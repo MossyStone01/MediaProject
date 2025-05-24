@@ -541,16 +541,38 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 951581667216928725, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: m_text
+      value: Push!
+      objectReference: {fileID: 0}
     - target: {fileID: 1282813148527719981, guid: b648e8adcf79e2f4ca0ad62586126806,
         type: 3}
       propertyPath: m_Name
       value: StageUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8073772918343157340, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: lifeText
+      value: 
+      objectReference: {fileID: 593867576}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b648e8adcf79e2f4ca0ad62586126806, type: 3}
+--- !u!114 &593867576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8656439070431722930, guid: b648e8adcf79e2f4ca0ad62586126806,
+    type: 3}
+  m_PrefabInstance: {fileID: 593867575}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0

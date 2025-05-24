@@ -12,15 +12,16 @@ public class GameMgr : MonoBehaviour
     [HideInInspector] public int score = 0;
     private int index;
     private string rankingSceneName = "RankingScene";
+    private string startSceneName = "StartScene";
     
     private AudioSource audioSource;
     public string[] sceneNames;
     
-    public float timerDuration = 5f;
+    public float timerDuration = 10f;
     [HideInInspector] public float timer;
     private bool gameStart = false;
 
-    private float times = 1.0f; // 스테이지가 지날 수록 점점 빨라지는 구조로 만들기 위한 factor
+    public float TimeFactor = 0.0f; // 스테이지가 지날 수록 점점 빨라지는 구조로 만들기 위한 factor
 
     public void EnterEnrollScene()
     {
@@ -35,11 +36,19 @@ public class GameMgr : MonoBehaviour
             return;
         }
 
-        index = Random.Range(1, sceneNames.Length);
+        index = 1;
         string sceneToLoad = sceneNames[index];
         Debug.Log("로딩할 랜덤 씬: " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
         gameStart = true;
+    }
+
+    public void Reset()
+    {
+        life = 5;
+        score = 0;
+        timer = timerDuration;
+        EnterEnrollScene();
     }
 
     public void Awake()
@@ -57,17 +66,25 @@ public class GameMgr : MonoBehaviour
         audioSource = GetComponent<AudioSource>();
         timer = timerDuration;
     }
-    
-    public void Update()
+
+    public bool UpdateTimer() // 각 Stage Manager에서 호출해서 Timer 업데이트.
     {
         if(gameStart)
             timer -= Time.deltaTime;
-
         if (timer <= 0f)
         {
-            
-            EndStage(false); // 시간 제한 초과
+            return true;
         }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void OptimiseTimer()
+    {
+        timer = timerDuration;
+        timer -= TimeFactor; // 시간이 지나면서 난이도 Up
     }
 
     public void EndStage(bool clear)
@@ -92,7 +109,7 @@ public class GameMgr : MonoBehaviour
                     string playerName = PlayerPrefs.GetString("PlayerName", "Unknown");
                     
                     string key = "Ranking_" + System.DateTime.Now.Ticks;
-                    string value = playerName + ":" + score;
+                    string value = playerName + " : " + score;
                     PlayerPrefs.SetString(key, value);
 
                     // 랭킹 키 목록 갱신
@@ -112,20 +129,22 @@ public class GameMgr : MonoBehaviour
         ChangeScene();
         
         timer = timerDuration;
+        TimeFactor += 0.1f;
         gameStart = true;
     }
 
     private void ChangeScene()
     {
-        int temp = Random.Range(1, sceneNames.Length);
-        while (temp == index)
+        if (sceneNames.Length <= index + 1)
         {
-            temp = Random.Range(1, sceneNames.Length);
+            index = 1;
+        }
+        else
+        {
+            index += 1;
         }
         
-        index = temp;
         string sceneToLoad = sceneNames[index];
-        Debug.Log("로딩할 랜덤 씬: " + sceneToLoad);
         SceneManager.LoadScene(sceneToLoad);
     }
     
@@ -134,13 +153,20 @@ public class GameMgr : MonoBehaviour
         playerName = submittedName;
         PlayerPrefs.SetString("PlayerName", submittedName);
         Debug.Log("이름 저장 완료: " + submittedName);
-
-        // 이름 저장 후 게임 시작으로 넘어가기
-        // SceneManager.LoadScene("GameScene"); 등
     }
 
     public void EnterRankingScene()
     {
         SceneManager.LoadScene(rankingSceneName);
+    }
+    
+    public void RestartGame()
+    {
+        Reset();
+    }
+    
+    public void QuitGame()
+    {
+        SceneManager.LoadScene(startSceneName);
     }
 }

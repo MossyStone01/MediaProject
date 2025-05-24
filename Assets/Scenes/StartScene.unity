@@ -178,8 +178,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Minigame Rush
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fac51cee3418a2348a77cb582712748f, type: 2}
+  m_sharedMaterial: {fileID: 9036473815045487133, guid: fac51cee3418a2348a77cb582712748f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -891,8 +892,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Ranking
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fac51cee3418a2348a77cb582712748f, type: 2}
+  m_sharedMaterial: {fileID: 9036473815045487133, guid: fac51cee3418a2348a77cb582712748f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1107,13 +1109,19 @@ MonoBehaviour:
   score: 0
   sceneNames:
   - EndScene
-  - Push
+  - Shoot
+  - PressSpace
+  - MathMatical
+  - TypeTheWord
+  - ColourMatching
   - Jump
   - Mario
-  - Shoot
   - Block
+  - Avoid
+  - Push
   timerDuration: 5
   timer: 0
+  TimeFactor: 0
 --- !u!4 &1671451533
 Transform:
   m_ObjectHideFlags: 0
@@ -1283,12 +1291,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Game
-
-'
+  m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fac51cee3418a2348a77cb582712748f, type: 2}
+  m_sharedMaterial: {fileID: 9036473815045487133, guid: fac51cee3418a2348a77cb582712748f,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

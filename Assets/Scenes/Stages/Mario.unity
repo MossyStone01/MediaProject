@@ -1026,16 +1026,62 @@ PrefabInstance:
       propertyPath: m_text
       value: "Reach \nthe goal!"
       objectReference: {fileID: 0}
+    - target: {fileID: 951581667216928725, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: fac51cee3418a2348a77cb582712748f,
+        type: 2}
+    - target: {fileID: 951581667216928725, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 9036473815045487133, guid: fac51cee3418a2348a77cb582712748f,
+        type: 2}
+    - target: {fileID: 951581667216928725, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1282813148527719981, guid: b648e8adcf79e2f4ca0ad62586126806,
         type: 3}
       propertyPath: m_Name
       value: StageUI
       objectReference: {fileID: 0}
+    - target: {fileID: 8073772918343157340, guid: b648e8adcf79e2f4ca0ad62586126806,
+        type: 3}
+      propertyPath: lifeText
+      value: 
+      objectReference: {fileID: 1419647943}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b648e8adcf79e2f4ca0ad62586126806, type: 3}
+--- !u!114 &1419647943 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8656439070431722930, guid: b648e8adcf79e2f4ca0ad62586126806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1419647942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1419647944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 951581667216928725, guid: b648e8adcf79e2f4ca0ad62586126806,
+    type: 3}
+  m_PrefabInstance: {fileID: 1419647942}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1463067679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,8 +1092,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1463067681}
   - component: {fileID: 1463067680}
-  - component: {fileID: 1463067682}
   - component: {fileID: 1463067683}
+  - component: {fileID: 1463067684}
   m_Layer: 0
   m_Name: MarioStageMgr
   m_TagString: Finish
@@ -1099,9 +1145,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
+  m_Sprite: {fileID: -8187355101989356663, guid: 27a107940057e8743a507269b18a691a,
     type: 3}
-  m_Color: {r: 0, g: 0.030314207, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1120,13 +1166,26 @@ Transform:
   m_GameObject: {fileID: 1463067679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.1791754, y: 5, z: -0.070133716}
-  m_LocalScale: {x: 0.5, y: 1, z: 1}
+  m_LocalPosition: {x: 5.088, y: 5.164, z: -0.070133716}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 815445717}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1463067682
+--- !u!114 &1463067683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1463067679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e23b2680f7ac3c4ba03a8d92f32f990, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resultText: {fileID: 1419647944}
+--- !u!61 &1463067684
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1160,30 +1219,18 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.018273234, y: -0.074616134}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.64, y: 0.64}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.35371757, y: 0.49076772}
   m_EdgeRadius: 0
---- !u!114 &1463067683
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463067679}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3e23b2680f7ac3c4ba03a8d92f32f990, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1739486995
 GameObject:
   m_ObjectHideFlags: 0

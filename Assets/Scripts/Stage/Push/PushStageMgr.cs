@@ -8,8 +8,18 @@ public class PushStageMgr : MonoBehaviour
     private void Start()
     {
         collider = GetComponent<BoxCollider2D>();
+        
+        GameMgr.Instance.OptimiseTimer();
     }
-    
+
+    private void Update()
+    {
+        if (GameMgr.Instance.UpdateTimer())
+        {
+            GameMgr.Instance.EndStage(false);
+        }
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Finish"))
